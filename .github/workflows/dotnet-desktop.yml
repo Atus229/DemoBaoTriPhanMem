@@ -1,0 +1,28 @@
+name: Kiem Thu Hoi Quy Tu Dong
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-va-kiem-thu:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Thiet lap moi truong .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+        
+    - name: Cai dat thu vien phu thuoc
+      run: dotnet restore
+      
+    - name: Bien dich ma nguon (Build)
+      run: dotnet build --no-restore
+      
+    - name: Chay ca kiem thu hoi quy (Test)
+      run: dotnet test --no-build --verbosity normal
