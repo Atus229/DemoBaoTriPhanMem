@@ -12,6 +12,7 @@ class Program
     // Hàm gốc đang có lỗi logic: Chưa tính phí giao dịch MoMo
     static double TinhTongTien(double giaGoc)
     {
-        return giaGoc;
+        double phiMoMo = 5000; // Bảo trì: Bổ sung phí giao dịch 5.000 VND
+        return giaGoc + phiMoMo;
     }
 }
