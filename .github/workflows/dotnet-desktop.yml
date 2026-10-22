@@ -2,7 +2,7 @@ name: Kiem Thu Hoi Quy Tu Dong
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" ] 
   pull_request:
     branches: [ "main" ]
 
